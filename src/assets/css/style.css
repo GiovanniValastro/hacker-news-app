@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-image: url(../imgs/industry-4.jpg);
+  background-color: #000000aa;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100%;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+}
+
+h1 {
+  width: 100%;
+  height: auto;
+  font-size: calc(1.6rem + 3vh);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 12vh;
+  background: linear-gradient(to right, #005a00cc 0%, #002200cc 100%);
+  color: white;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 25px;
+  border: 3px solid black;
+  width: 35px;
+}
+
+.github {
+  border-radius: 50%;
+  right: 90px;
+  content: url(../imgs/github.png);
+}
+
+.logo {
+  right: 20px;
+  content: url(../imgs/logo.png);
+}
+
+.box {
+  min-height: 1200px;
+  width: 55%;
+  background-color: #001100dd;
+  padding: 30px 0 30px 0;
+  margin: auto;
+  border: 5px solid black;
+  border-radius: 7px;
+}
+
+.news {
+  font-size: 20px;
+  width: 80%;
+  height: 100px;
+  font-size: 18px;
+  overflow: hidden;
+  padding: 15px;
+  margin: 15px auto;
+  border: 3px solid black;
+  border-radius: 7px;
+  position: relative;
+  background: linear-gradient(to right, #005a00cc 0%, #002200cc 100%);
+  animation: fade-in 2s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #02daf7;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+span {
+  font-size: 16px;
+  color: white;
+}
+
+.news-by {
+  left: 16px; 
+  bottom: 12px;
+  position: absolute;
+}
+
+.news-time {
+  right: 20px;
+  bottom: 12px;
+  position: absolute;
+}
+
+.container {
+  text-align: center;
+}
+
+button {
+  background: linear-gradient(to right, #005a00cc 0%, #002200cc 100%);
+  font-size: 25px;
+  color: white;
+  width: 150px;
+  height: 60px;
+  text-align: center;
+  cursor: pointer;
+  border: 3px solid black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 7px;
+}
+
+button:hover {
+  background-color: #007700cc;
+}
+
+@media only screen and (max-width: 980px) {
+  .box {
+    width: 80%;
+  }
+
+  .news {
+    width: 90%;
+  }
+
+  .icon {
+    display: none;
+  }
+}
+
+.github {
+  right: 75px;
+}
+
+@media only screen and (max-width: 630px) {
+  .news {
+    width: 95%;
+    height: 120px;
+    margin: 10px auto;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .box {
+    width: 90%;
+    background-color: #001100ee;
+    margin: auto;
+    border: 5px solid black;
+    padding: 0;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  .news-by {
+    left: 10px;
+  }
+
+  .news-time {
+    right: 10px;
+  }
+}
+
+.alr {
+  width: 80%;
+  min-height: 50px;
+  background-color:  #700505;
+  margin: 10px auto 0 auto;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 7px;
+  border: red 2px solid;
+  color: white;
+}
