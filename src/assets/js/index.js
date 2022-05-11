@@ -20,33 +20,31 @@ async function showNews() {
 
 function createElement(array, index) {
   Promise.all(array.slice(index, index + 10).map((item) => 
-    axios.get(`https://hacker-news.firebaseio.com/v0/item/${item}.json`)
-    .then(res => res.data)))
+    axios.get(`https://hacker-news.firebaseio.com/v0/item/${item}.json`)))
     .then(( res => { 
       res.forEach(news => {
         box.insertAdjacentHTML("beforeend",
-                             `<div class ="news">
-                                <a href = ${_.get(news, "url", location.href)} target =_blanck>
-                                  ${_.get(news, "title", "title")} 
-                                </a>
-                                <span class = "news-by">
-                                  by ${_.get(news, "by", "author")} 
-                                </span>
-                                <span class = "news-time">
-                                  ${timeDifference(Date.now(), news.time * 1000)} ago
-                                </span> 
-                              <div>`
+                               `<div class ="news">
+                                  <a href = ${_.get(news, "data.url", location.href)} target =_blanck>
+                                    ${_.get(news, "data.title", "title")} 
+                                  </a>
+                                  <span class = "news-by">
+                                    by ${_.get(news, "data.by", "author")} 
+                                  </span>
+                                  <span class = "news-time">
+                                    ${timeDifference(Date.now(), news.data.time * 1000)} ago
+                                  </span> 
+                                <div>`
         );
       });     
-    }))
-      .catch(error => {
-        box.insertAdjacentHTML("beforeend",
-                             `<div class="alr">
-                                Sorry an error was detected.<br>  
-                                <span>${error}</span>
-                              </div>`   
-        );
-      });       
+    })).catch(error => {
+         box.insertAdjacentHTML("beforeend",
+                                `<div class="alr">
+                                   Sorry an error was detected.<br>  
+                                   <span>${error}</span>
+                                 </div>`   
+         );
+       });       
 }      
 
 function timeDifference(timeNow, timeNews) {
